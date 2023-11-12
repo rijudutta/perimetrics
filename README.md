@@ -10,7 +10,7 @@ For connected-component labeling, the package <tt>connected-components-3d</tt> i
 For contouring, the algorithm used is marching squares with linear interpolation of values between cell centers, based on:
 *Utilizing Minkowski functionals for image analysis: a marching square algorithm*, Hubert Mantz *et al J. Stat. Mech.* (2008) P12015, DOI: 10.1088/1742-5468/2008/12/P12015
 
-![](/code_description_1.PNG "(a)") ![](/code_description_2.PNG "(b)")
+![](/code_description_1.PNG "(a)" =80%x) ![](/code_description_2.PNG "(b)" =80%x)
 
 
 My main motivation for writing this code was that existing codes for computing Minkowski functionals usually give the *total* area above the threshold and the *total* length of the contour at that threshold. This obscures the study of geometry of the individual structures, and their statistics. For such studies using the total area and perimeter would mean contouring and measuring each connected component separately, which in turn would mean looping over the image N times, once for each connected component. For large random fields, if N scales linearly with the number of pixels N<sub>pix</sub>, then this approach would lead to a time complexity of *O*(N<sub>pix</sub> <sup>2</sup>). The approach used here has a time complexity of *O*(N<sub>pix</sub>), since it only needs two passes through the image.
