@@ -1,4 +1,6 @@
 # perimetrics: measuring geometry of connected components
+This is perimetrics, an implementation of the marching squares algorithm for contouring 2D images, that uses linear interpolation between cell centers to determine the position of the contour, then uses this contour to separately return the area and perimeter of each connected component formed by this contour.
+
 The following is an outline of the **algorithm**:
 1. Read a grayscale image (as a 2D array) and the threshold at which the image is to be contoured
 2. Contour the image vertex-by-vertex and distribute the area, perimeter values found at that vertex to the above-threshold cells surrounding that vertex, in a single pass through the image
