@@ -1,4 +1,4 @@
-# perimetrics: accurate measurement of each connected-component contour
+# perimetrics: measuring the geometry of connected-components
 The function of this code is to:
 - Read a grayscale image (as a 2D array) and the threshold at which the image is to be contoured
 - Contour the image vertex-by-vertex and distribute the area, perimeter values found at that vertex to the above-threshold cells surrounding that vertex, in a single pass through the image
