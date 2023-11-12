@@ -15,7 +15,7 @@ For contouring, the algorithm used is marching squares with linear interpolation
   <img src="/code_description_2.PNG" width="45%" />
 </p>
 <p align="center">
-**Figure 1.** Schematic diagrams illustrating the working of our code,
+**Figure 1** Schematic diagrams illustrating the working of our code,
 for two different kinds of vertices. In both cases, threshold value
 equals 1. Left: one of the 4 cells around the vertex is above the
 threshold, three are below. In this case the contour length (thin
