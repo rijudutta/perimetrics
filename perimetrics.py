@@ -203,6 +203,17 @@ def value_list(image, threshold):
 # *************************************************************************************************************************************
 
 
+# Following are some functions for studying the filamentarity of the connected components:
+
+
+# Reads greyscale input image and threshold, and returns the full list of filamentarities of the connected components found
+# at that threshold 
+def filamentarity(img, threshold):
+    V_arr = value_list(img, threshold)
+    A = V_arr[1:,0]
+    P = V_arr[1:,1]
+    F = ( (P**2 / (4*math.pi*A)) - 1 ) / ( (P**2 / (4*math.pi*A)) + 1 )
+    return F
 
 # Reads greyscale input image and threshold, and returns mean filamentarity of the connected components found
 # at that threshold (having area greater than A_min)
@@ -218,7 +229,7 @@ def filamentarity(img, threshold, A_min):
 
 # Creates a list of mean filamentarity values corresponding to a range of threshold values
 # specified in threshold_list argument
-def fil_list(img, threshold_list, A_min):
+def mean_fil_list(img, threshold_list, A_min):
     fil_list = np.zeros(threshold_list.size)
     for i in range(threshold_list.size):
         fil_list[i] = filamentarity(img, threshold_list[i], A_min)
