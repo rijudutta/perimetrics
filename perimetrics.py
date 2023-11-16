@@ -217,7 +217,7 @@ def filamentarity(img, threshold):
 
 # Reads greyscale input image and threshold, and returns mean filamentarity of the connected components found
 # at that threshold (having area greater than A_min)
-def filamentarity(img, threshold, A_min):
+def mean_filamentarity(img, threshold, A_min):
     V_arr = value_list(img, threshold)
     A = V_arr[1:,0]
     P = V_arr[1:,1]
